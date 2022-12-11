@@ -11,7 +11,7 @@ export class ContainerComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    //this.weatherService.getCityGeoData('London');
+    this.weatherService.getWeatherData('Lviv');
   }
 
 }
