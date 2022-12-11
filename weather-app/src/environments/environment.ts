@@ -4,17 +4,8 @@
 
 export const environment = {
   production: false,
-  apiGeocoding: {
-    url: 'https://forward-reverse-geocoding.p.rapidapi.com/v1/forward',
-    params: {
-      city: '',
-      'accept-language': 'en', 
-      polygon_threshold: '0.0'
-    },
-    headers: {
-      'X-RapidAPI-Key': '*',
-      'X-RapidAPI-Host': 'forward-reverse-geocoding.p.rapidapi.com'
-    }
+  apiWeather: {
+    
   }
 };
 
