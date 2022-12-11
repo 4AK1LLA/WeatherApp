@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" *ngIf="this.WeatherDTO">
     <div class="upper-data">
-        <img *ngIf="24 > 10" src="https://cdn.pixabay.com/photo/2016/11/21/03/56/landscape-1844230_960_720.png">
-        <img *ngIf="24 <= 10" src="https://cdn.pixabay.com/photo/2016/11/21/03/56/landscape-1844231_960_720.png">
+        <img *ngIf="this.WeatherDTO.temperature > 10" src="https://cdn.pixabay.com/photo/2016/11/21/03/56/landscape-1844230_960_720.png">
+        <img *ngIf="this.WeatherDTO.temperature <= 10" src="https://cdn.pixabay.com/photo/2016/11/21/03/56/landscape-1844231_960_720.png">
         <div class="weather-data">
-            <div class="location">Kyiv</div>
-            <div class="temperature">14°C</div>
+            <div class="location">{{ this.WeatherDTO.city_name }}</div>
+            <div class="temperature">{{ this.WeatherDTO.temperature | number: '1.0-0' }}°C</div>
         </div>
     </div>
     <div class="lower-data">
@@ -15,28 +15,28 @@
                     <i class="bi bi-thermometer-snow"></i>
                     <span>min</span>
                 </div>
-                <div class="block-value">10°C</div>
+                <div class="block-value">{{ this.WeatherDTO.min_temperature | number: '1.0-0' }}°C</div>
             </div>
             <div class="more-info-block">
                 <div class="block-label">
                     <i class="bi bi-thermometer-sun"></i>
                     <span>max</span>
                 </div>
-                <div class="block-value">20°C</div>
+                <div class="block-value">{{ this.WeatherDTO.max_temperature | number: '1.0-0' }}°C</div>
             </div>
             <div class="more-info-block">
                 <div class="block-label">
                     <i class="bi bi-moisture"></i>
                     <span>humidity</span>
                 </div>
-                <div class="block-value">77%</div>
+                <div class="block-value">{{ this.WeatherDTO.humidity }}%</div>
             </div>
             <div class="more-info-block">
                 <div class="block-label">
                     <i class="bi bi-wind"></i>
                     <span>wind</span>
                 </div>
-                <div class="block-value">11 km/h</div>
+                <div class="block-value">{{ this.WeatherDTO.wind_speed | number: '1.0-0' }} km/h</div>
             </div>
         </div>
     </div>
